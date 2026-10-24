@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voces del Saber — Revista Escolar Digital</title>
+  <meta name="description" content="Revista escolar digital sobre constitución, participación, derechos y convivencia. Colegio de Colombia.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========================= -->
+  <!-- HEADER / NAVEGACIÓN        -->
+  <!-- ========================= -->
+  <header class="header" id="header">
+    <div class="header-contenido">
+      <button class="btn-menu" id="btnMenu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="logo" onclick="irASeccion('cover')">
+        <!-- Logo SVG: libro abierto con texto -->
+        <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Libro izquierdo -->
+          <path d="M4 8 C4 8 4 26 4 27 C9 25 14 25 18 27 L18 9 C14 7 9 7 4 8Z" fill="rgba(255,255,255,0.9)"/>
+          <!-- Libro derecho -->
+          <path d="M32 8 C27 7 22 7 18 9 L18 27 C22 25 27 25 32 27 L32 8Z" fill="rgba(255,255,255,0.7)"/>
+          <!-- Lomo -->
+          <rect x="17" y="8" width="2" height="19" rx="1" fill="rgba(255,255,255,0.5)"/>
+          <!-- Líneas de texto izquierdo -->
+          <line x1="7" y1="13" x2="15" y2="12" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="7" y1="16" x2="15" y2="15" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="7" y1="19" x2="15" y2="18" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Líneas de texto derecho -->
+          <line x1="21" y1="12" x2="29" y2="13" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="21" y1="15" x2="29" y2="16" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="21" y1="18" x2="29" y2="19" stroke="#2563eb" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Estrella de conocimiento -->
+          <circle cx="18" cy="5" r="2.5" fill="#f5c842"/>
+          <path d="M18 2.5 L18.6 4.2 L20.4 4.2 L19 5.3 L19.5 7 L18 6 L16.5 7 L17 5.3 L15.6 4.2 L17.4 4.2Z" fill="#f5c842"/>
+        </svg>
+        <span class="logo-texto">Voces del Saber</span>
+      </div>
+
+      <nav class="nav" id="nav">
+        <!-- Cada categoría desplegable tiene un botón que abre su submenú -->
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="editorial">📝 Editorial</button>
+          <div class="nav-submenu">
+            <a href="#carta-editor" data-seccion="carta-editor">Carta del editor</a>
+            <a href="#indice" data-seccion="indice">Índice</a>
+          </div>
+        </div>
+
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="constitucion">⚖️ Constitución</button>
+          <div class="nav-submenu">
+            <a href="#constitucion-participacion" data-seccion="constitucion-participacion">Constitución y participación</a>
+            <a href="#infografia-mecanismos" data-seccion="infografia-mecanismos">Mecanismos de participación</a>
+            <a href="#constitucion-corrupcion" data-seccion="constitucion-corrupcion">Constitución y corrupción</a>
+            <a href="#entrevista-constitucional" data-seccion="entrevista-constitucional">Entrevista constitucional</a>
+            <a href="#accion-tutela" data-seccion="accion-tutela">Acción de tutela</a>
+          </div>
+        </div>
+
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="infancia">👧 Infancia</button>
+          <div class="nav-submenu">
+            <a href="#codigo-infancia" data-seccion="codigo-infancia">Código de infancia</a>
+            <a href="#principios-infancia" data-seccion="principios-infancia">Principios del código</a>
+            <a href="#infografia-srpa" data-seccion="infografia-srpa">Infografía SRPA</a>
+            <a href="#encuesta-bullying" data-seccion="encuesta-bullying">Encuesta de bullying</a>
+          </div>
+        </div>
+
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="derechos">🤝 Derechos</button>
+          <div class="nav-submenu">
+            <a href="#directorio-proteccion" data-seccion="directorio-proteccion">Directorio de protección</a>
+            <a href="#deberes-derechos" data-seccion="deberes-derechos">Deberes vs. derechos</a>
+            <a href="#violencia-genero" data-seccion="violencia-genero">Violencia de género</a>
+            <a href="#banderas-rojas" data-seccion="banderas-rojas">Banderas rojas</a>
+            <a href="#ley-rosa-elvira" data-seccion="ley-rosa-elvira">Ley Rosa Elvira Cely</a>
+            <a href="#derechos-sexuales" data-seccion="derechos-sexuales">Derechos sexuales y reproductivos</a>
+            <a href="#test-mito-realidad" data-seccion="test-mito-realidad">Test mito vs. realidad</a>
+            <a href="#poster-prevencion" data-seccion="poster-prevencion">Póster de prevención</a>
+          </div>
+        </div>
+
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="convivencia">🏙️ Convivencia</button>
+          <div class="nav-submenu">
+            <a href="#convivencia-policia" data-seccion="convivencia-policia">Código de policía</a>
+            <a href="#fotoreportaje-movilidad" data-seccion="fotoreportaje-movilidad">Fotoreportaje movilidad</a>
+            <a href="#proteccion-animal" data-seccion="proteccion-animal">Protección animal</a>
+            <a href="#tenencia-responsable" data-seccion="tenencia-responsable">Tenencia responsable</a>
+            <a href="#reto-ecologico" data-seccion="reto-ecologico">Reto ecológico</a>
+          </div>
+        </div>
+
+        <div class="nav-categoria">
+          <button class="nav-boton" data-cat="mas">🎮 Más</button>
+          <div class="nav-submenu">
+            <a href="#pasatiempos" data-seccion="pasatiempos">Pasatiempos</a>
+            <a href="#creditos" data-seccion="creditos">Créditos y referencias</a>
+            <a href="#contraportada" data-seccion="contraportada">Contraportada</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ========================= -->
+    <!-- PORTADA                    -->
+    <!-- ========================= -->
+    <section id="cover" class="seccion seccion-activa portada-revista">
+
+      <!-- Fondo de escritorio / ambiente -->
+      <div class="pr-ambiente"></div>
+
+      <!-- Revista como objeto físico -->
+      <div class="pr-revista">
+
+        <!-- Espiral de cuaderno (borde derecho) -->
+        <div class="pr-espiral">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <!-- ── Barra superior ── -->
+        <div class="pr-topbar">
+          <span class="pr-topbar-izq">REVISTA ESCOLAR DIGITAL ——</span>
+          <span class="pr-topbar-der">CONSTITUCIÓN &nbsp;·&nbsp; DERECHOS &nbsp;·&nbsp; CIUDADANÍA</span>
+        </div>
+
+        <!-- ── Nombre del colegio ── -->
+        <div class="pr-colegio">
+          <svg class="pr-colegio-icono" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 3L2 8l10 5 10-5-10-5z" fill="#1a2540"/>
+            <path d="M2 12l10 5 10-5" stroke="#1a2540" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M2 16l10 5 10-5" stroke="#1a2540" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          </svg>
+          <span>I.E. Ramón Munera Lopera</span>
+        </div>
+
+        <!-- ── Título principal ── -->
+        <div class="pr-titulo-wrap">
+          <h1 class="pr-titulo">
+            <span class="pr-titulo-voces">Voces del</span>
+            <span class="pr-titulo-saber">Saber</span>
+          </h1>
+          <!-- Destello decorativo -->
+          <span class="pr-destellos" aria-hidden="true">✦ ✦</span>
+        </div>
+
+        <!-- ── Lema lateral derecho ── -->
+        <div class="pr-lema-lateral">
+          <p>La fuerza<br>de una sociedad<br>informada está<br>en sus jóvenes</p>
+          <span class="pr-corazon">♡</span>
+        </div>
+
+        <!-- ── Zona central: imagen + columna izquierda ── -->
+        <div class="pr-cuerpo">
+
+          <!-- Columna izquierda con stickers y listas -->
+          <div class="pr-col-izq">
+
+            <!-- Sticker amarillo tipo nota adhesiva -->
+            <div class="pr-sticker-nota">
+              <span class="pr-clip">📎</span>
+              <strong>Constitución<br>y participación</strong>
+              <p>Tu voz también<br>construye país</p>
+              <span class="pr-underline"></span>
+            </div>
+
+            <!-- Lista de valores con colores -->
+            <ul class="pr-valores">
+              <li><span class="pr-val-tag pr-val-amarillo">+ Derechos</span></li>
+              <li><span class="pr-val-tag pr-val-rosa">+ Igualdad</span></li>
+              <li><span class="pr-val-tag pr-val-azul">+ Justicia</span></li>
+              <li><span class="pr-val-tag pr-val-verde">+ Democracia</span></li>
+            </ul>
+
+            <!-- Texto manuscrito inferior -->
+            <p class="pr-manuscrito">
+              Conocer<br>la Constitución<br>también es<br>un acto de<br>cambio ♡
+            </p>
+          </div>
+
+          <!-- Imagen central (papel rasgado) -->
+          <div class="pr-imagen-wrap">
+            <div class="pr-papel-rasgado">
+              <img
+                src="Imagenes/WhatsApp Image 2026-10-19 at 2.39.52 PM.jpeg"
+                alt="Congreso de Colombia y Constitución Política"
+                class="pr-imagen-principal"
+              >
+            </div>
+          </div>
+
+        </div><!-- /pr-cuerpo -->
+
+        <!-- ── Sticker rosa inferior derecho ── -->
+        <div class="pr-sticker-rosa">
+          <p>Más<br>participación<br>menos indiferencia</p>
+          <span class="pr-corazon">♡</span>
+        </div>
+
+        <!-- ── Franja bandera Colombia ── -->
+        <div class="pr-bandera">
+          <span class="pr-bandera-amarillo"></span>
+          <span class="pr-bandera-azul"></span>
+          <span class="pr-bandera-rojo"></span>
+        </div>
+
+        <!-- ── Titulares clicables ── -->
+        <div class="pr-titulares">
+          <button class="pr-titular" onclick="irASeccion('constitucion-corrupcion')">
+            <span class="pr-titular-num">01</span>
+            <span>¿Conocer la Constitución es la mejor arma contra la corrupción?</span>
+          </button>
+          <button class="pr-titular" onclick="irASeccion('violencia-genero')">
+            <span class="pr-titular-num">02</span>
+            <span>Violencia de género: cinco manifestaciones que debemos identificar</span>
+          </button>
+          <button class="pr-titular" onclick="irASeccion('tenencia-responsable')">
+            <span class="pr-titular-num">03</span>
+            <span>Adoptar, no comprar: el verdadero costo de una mascota</span>
+          </button>
+        </div>
+
+        <!-- ── Pie de revista: código de barras + botones ── -->
+        <div class="pr-pie">
+          <div class="pr-barcode">
+            <div class="pr-barcode-img" aria-hidden="true">
+              <!-- Código de barras SVG decorativo -->
+              <svg width="70" height="36" viewBox="0 0 70 36" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0"  width="2" height="32" fill="#111"/>
+                <rect x="4"  width="1" height="32" fill="#111"/>
+                <rect x="7"  width="3" height="32" fill="#111"/>
+                <rect x="12" width="1" height="32" fill="#111"/>
+                <rect x="15" width="2" height="32" fill="#111"/>
+                <rect x="19" width="1" height="32" fill="#111"/>
+                <rect x="22" width="3" height="32" fill="#111"/>
+                <rect x="27" width="1" height="32" fill="#111"/>
+                <rect x="30" width="2" height="32" fill="#111"/>
+                <rect x="34" width="1" height="32" fill="#111"/>
+                <rect x="37" width="3" height="32" fill="#111"/>
+                <rect x="42" width="1" height="32" fill="#111"/>
+                <rect x="45" width="2" height="32" fill="#111"/>
+                <rect x="49" width="1" height="32" fill="#111"/>
+                <rect x="52" width="3" height="32" fill="#111"/>
+                <rect x="57" width="1" height="32" fill="#111"/>
+                <rect x="60" width="2" height="32" fill="#111"/>
+                <rect x="64" width="1" height="32" fill="#111"/>
+                <rect x="67" width="3" height="32" fill="#111"/>
+                <text x="0" y="36" font-size="5" fill="#111" font-family="monospace">EDICIÓN 01 | 2026</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="pr-botones">
+            <button class="btn pr-btn-primario" onclick="irASeccion('carta-editor')">Comenzar a leer 📖</button>
+            <button class="btn pr-btn-secundario" onclick="irASeccion('indice')">Ver índice ☰</button>
+          </div>
+        </div>
+
+      </div><!-- /pr-revista -->
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- 01 · CARTA DEL EDITOR     -->
+    <!-- ========================= -->
+    <section id="carta-editor" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">01</span>
+        <h2 class="seccion-titulo">Carta del Editor</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <div class="tarjeta tarjeta-editorial">
+
+          <!-- Foto del equipo editorial -->
+          <div class="editorial-foto-wrap">
+            <img
+              src="Imagenes/WhatsApp Image 2026-10-23 at 8.06.17 PM.jpeg"
+              alt="Equipo editorial — Voces del Saber"
+              class="editorial-foto"
+            >
+            <p class="editorial-foto-caption">Equipo editorial<br>Institución Educativa Ramón Munera Lopera</p>
+          </div>
+
+          <div class="editorial-texto">
+            <p class="saludo">Queridos lectores:</p>
+            <p>Es un honor presentar la primera edición de <strong>Voces del Saber</strong>, una revista escolar creada por y para los estudiantes de la <strong>Institución Educativa Ramón Munera Lopera</strong>. El Artículo 41 de la Constitución Política de Colombia establece que en todas las instituciones de educación serán obligatorios el estudio de la Constitución y la instrucción cívica. Esta revista es nuestra respuesta a ese deber constitucional: un esfuerzo por acercar la norma de normas a la vida cotidiana de nuestra comunidad educativa.</p>
+            <p>A lo largo de estas páginas encontrarán un análisis riguroso de los mecanismos de participación, el Código de Infancia y Adolescencia, la violencia de género, los derechos reproductivos, la convivencia ciudadana, la movilidad y la protección animal. No buscamos repetir la ley, sino comprenderla, cuestionarla y aplicarla.</p>
+            <p>Los invitamos a leer, opinar y participar. Conocer nuestros derechos es el primer paso para ejercerlos; cumplir nuestros deberes es la base de la convivencia democrática.</p>
+            <p class="firma">
+              — El equipo editorial<br>
+              <em>Saray Londoño Munera · Carla Carolina Padilla Prens<br>
+              Andy Valeria Mazo · Johan Daniel Toro</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- IDENTIDAD EDITORIAL Y JUSTIFICACIÓN GRÁFICA -->
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>🎯 Público objetivo</h3>
+            <p>Esta publicación va dirigida principalmente a los estudiantes de bachillerato de la Institución Educativa Ramón Munera Lopera, así como a docentes, padres de familia y miembros de la comunidad educativa interesados en conocer y ejercer sus derechos y deberes ciudadanos.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>🎨 Identidad gráfica</h3>
+            <p><strong>Paleta:</strong> azul institucional, blanco, azul claro y gris. <strong>Fuentes:</strong> una serif para títulos (formalidad jurídica) y una sans-serif para textos (legibilidad en pantalla). Esta combinación transmite seriedad y atractivo juvenil.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('cover')">← Portada</button>
+        <button class="btn btn-nav" onclick="irASeccion('indice')">Índice →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 02 · ÍNDICE                -->
+    <!-- ========================= -->
+    <section id="indice" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">02</span>
+        <h2 class="seccion-titulo">Índice</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <div class="indice-grid" id="indiceGrid">
+          <!-- El índice se genera automáticamente con JavaScript -->
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('carta-editor')">← Carta del editor</button>
+        <button class="btn btn-nav" onclick="irASeccion('constitucion-participacion')">Constitución →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 03 · CONSTITUCIÓN Y PARTICIPACIÓN -->
+    <!-- ========================= -->
+    <section id="constitucion-participacion" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">03</span>
+        <h2 class="seccion-titulo">Constitución Política y Participación</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO: Reemplaza por <img src="ruta/constitucion.jpg" alt="Constitución"> -->
+        <div class="placeholder-img placeholder-grande">🏛️ Constitución Política de Colombia</div>
+
+        <div class="tarjeta">
+          <h3>¿Qué es la Constitución Política?</h3>
+          <!-- TEXTO DE EJEMPLO -->
+          <p>La Constitución Política es la norma suprema de Colombia. Fue promulgada en 1991 y organiza el Estado, define los derechos y deberes de los ciudadanos y establece los mecanismos para ejercer la participación democrática.</p>
+          <p>Su preámbulo resalta que el pueblo de Colombia se une "con el fin de fortalecer la unidad de la Nación y asegurar a sus integrantes la vida, la convivencia, el trabajo, la justicia, la igualdad, el conocimiento, la libertad y la paz".</p>
+        </div>
+
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>📌 Principios fundamentales</h3>
+            <p>El Estado social de derecho, la soberanía popular, la separación de poderes y la primacía de los derechos inalienables.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>📌 Derechos y deberes</h3>
+            <p>Derechos fundamentales, económicos, sociales, culturales y colectivos, junto con los deberes de toda persona.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>📌 Participación democrática</h3>
+            <p>El pueblo ejerce el poder mediante el voto y los mecanismos de participación contemplados en la ley.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('indice')">← Índice</button>
+        <button class="btn btn-nav" onclick="irASeccion('infografia-mecanismos')">Mecanismos →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 04 · INFOGRAFÍA MECANISMOS DE PARTICIPACIÓN -->
+    <!-- ========================= -->
+    <section id="infografia-mecanismos" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">04</span>
+        <h2 class="seccion-titulo">Infografía: Mecanismos de Participación</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Cuatro mecanismos fundamentales para defender los derechos y participar en las decisiones del país. Conócelos y úsalos.</p>
+
+        <div class="infografia-grid">
+          <div class="info-card">
+            <div class="info-icono">⚖️</div>
+            <h3>Acción de Tutela</h3>
+            <p>Mecanismo judicial para proteger los derechos fundamentales cuando son vulnerados o amenazados. Es gratuita, no requiere abogado y se resuelve en máximo 10 días (Art. 86 C.P.).</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icono">📄</div>
+            <h3>Derecho de Petición</h3>
+            <p>Toda persona puede presentar peticiones respetuosas a las autoridades por motivos de interés general o particular y obtener pronta resolución (Art. 23 C.P.).</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icono">📋</div>
+            <h3>Plebiscito</h3>
+            <p>El pueblo ratifica o rechaza una decisión del Presidente sobre una política de gran trascendencia que no requiera reforma constitucional (Art. 104 C.P.).</p>
+          </div>
+          <div class="info-card">
+            <div class="info-icono">🗳️</div>
+            <h3>Referendo</h3>
+            <p>El pueblo aprueba o rechaza un proyecto de norma jurídica o la derogación de una vigente. Puede ser nacional, regional o local (Ley 134 de 1994).</p>
+          </div>
+        </div>
+
+        <div class="destacado">
+          <h4>💡 ¿Sabías que?</h4>
+          <p>La Acción de Tutela y el Derecho de Petición son derechos fundamentales; el Plebiscito y el Referendo son mecanismos de participación democrática directa.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('constitucion-participacion')">← Constitución</button>
+        <button class="btn btn-nav" onclick="irASeccion('constitucion-corrupcion')">Corrupción →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 05 · CONSTITUCIÓN Y CORRUPCIÓN -->
+    <!-- ========================= -->
+    <section id="constitucion-corrupcion" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">05</span>
+        <h2 class="seccion-titulo">Artículo: Constitución y Corrupción</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO: Reemplaza por <img src="ruta/corrupcion.jpg" alt="Corrupción"> -->
+        <div class="placeholder-img placeholder-grande">🔍 Transparencia y ética pública</div>
+
+        <div class="tarjeta">
+          <h3>¿Por qué conocer la Constitución es la mejor herramienta contra la corrupción en Colombia?</h3>
+          <!-- TEXTO DE EJEMPLO: Artículo de opinión argumentativo (mín. 300 palabras) -->
+          <p>La corrupción no es simplemente un problema de moralidad individual: es un fenómeno estructural que se alimenta del desconocimiento. Cuando los ciudadanos ignoran sus derechos y los límites del poder público, los actos corruptos encuentran un terreno fértil para crecer sin consecuencias. Por eso, sostengo que conocer la Constitución Política es la mejor herramienta contra la corrupción en Colombia.</p>
+          <p>En primer lugar, la Constitución de 1991 estableció los principios que rigen la función administrativa en su artículo 209: igualdad, moralidad, eficacia, economía, celeridad, imparcialidad y publicidad. Un ciudadano que conoce estos principios puede identificar cuándo una autoridad los vulnera y tiene las herramientas para exigir su cumplimiento. La ignorancia de la norma, en cambio, permite que se normalicen prácticas irregulares.</p>
+          <p>En segundo lugar, la Constitución creó los mecanismos para controlar el poder: el derecho de petición para exigir información, la acción de tutela para proteger derechos fundamentales, la acción popular para defender intereses colectivos y la acción de cumplimiento para obligar al cumplimiento de la ley. Estos instrumentos son gratuitos y accesibles, pero solo los usan quienes los conocen.</p>
+          <p>En tercer lugar, la rendición de cuentas es un pilar del Estado social de derecho. La Constitución consagra órganos de control como la Procuraduría, la Contraloría y la Personería, pero también habilita el control social: la vigilancia que ejercemos los ciudadanos. Sin embargo, este control solo es efectivo cuando la comunidad sabe qué vigilar y cómo hacerlo.</p>
+          <p>Por último, la Ley 1474 de 2011 (Estatuto Anticorrupción) reforzó las sanciones y amplió las herramientas de prevención. Pero la ley escrita no basta: se necesita una cultura ciudadana que la haga cumplir. Esa cultura se construye desde la educación, desde el estudio de la Constitución que ordena el artículo 41.</p>
+          <p>Concluyo que la corrupción prospera en la oscuridad de la ignorancia y retrocede ante la luz del conocimiento. Conocer la Constitución no es una tarea académica: es un acto de defensa cívica. Cada estudiante que aprende sus derechos se convierte en un guardián de la democracia.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('infografia-mecanismos')">← Mecanismos</button>
+        <button class="btn btn-nav" onclick="irASeccion('entrevista-constitucional')">Entrevista →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 06 · ENTREVISTA CONSTITUCIONAL -->
+    <!-- ========================= -->
+    <section id="entrevista-constitucional" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">06</span>
+        <h2 class="seccion-titulo">Entrevista Constitucional</h2>
+      </div>
+      <div class="seccion-cuerpo">
+
+        <div class="entrevista">
+
+          <!-- ── Columna izquierda: foto + datos del entrevistado ── -->
+          <div class="entrevista-persona">
+            <img
+              src="Imagenes/WhatsApp Image 2026-10-23 at 6.14.06 PM.jpeg"
+              alt="Entrevista con Arquímedes en el colegio"
+              class="entrevista-foto entrevista-foto--cover"
+            >
+            <h3>Arquímedes</h3>
+          </div>
+
+          <!-- ── Columna derecha: reproductor + preguntas ── -->
+          <div class="entrevista-dialogo">
+
+            <!-- Reproductor de audio -->
+            <div class="audio-entrevista">
+              <div class="audio-encabezado">
+                <span class="audio-icono">🎙️</span>
+                <div>
+                  <p class="audio-titulo">Escucha la entrevista completa</p>
+                  <p class="audio-subtitulo">Respuestas en audio — Entrevista Constitucional</p>
+                </div>
+              </div>
+              <audio controls class="audio-player">
+                <source src="Audio/entrevista-constitucional.ogg" type="audio/ogg">
+                Tu navegador no soporta la reproducción de audio.
+              </audio>
+              <p class="audio-nota">💡 Las respuestas a las preguntas se encuentran en el audio.</p>
+            </div>
+
+            <!-- Preguntas (sin respuestas escritas) -->
+            <p class="pregunta">
+              <span class="pregunta-num">01</span>
+              <strong>¿Cuáles son los derechos fundamentales que más se vulneran en nuestra comunidad educativa?</strong>
+            </p>
+
+            <p class="pregunta">
+              <span class="pregunta-num">02</span>
+              <strong>¿Qué derechos fundamentales se promueven o protegen con mayor éxito en el colegio?</strong>
+            </p>
+
+            <p class="pregunta">
+              <span class="pregunta-num">03</span>
+              <strong>¿Qué mecanismo de protección usaría usted para defender un derecho vulnerado en la institución?</strong>
+            </p>
+
+          </div>
+        </div><!-- /entrevista -->
+
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('constitucion-corrupcion')">← Corrupción</button>
+        <button class="btn btn-nav" onclick="irASeccion('accion-tutela')">Tutela →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 07 · ACCIÓN DE TUTELA -->
+    <!-- ========================= -->
+    <section id="accion-tutela" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">07</span>
+        <h2 class="seccion-titulo">Caso Práctico: Acción de Tutela</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO: Reemplaza por <img src="ruta/tutela.jpg" alt="Acción de tutela"> -->
+        <div class="placeholder-img placeholder-grande">⚖️ Acción de Tutela — Artículo 86</div>
+
+        <div class="tarjeta">
+          <h3>¿Qué es la acción de tutela?</h3>
+          <p>Es un mecanismo judicial diseñado para proteger los derechos fundamentales cuando estos son vulnerados o amenazados. Es gratuita, no requiere abogado, es informal y debe resolverse en máximo 10 días (Art. 86 de la Constitución).</p>
+        </div>
+
+        <!-- CASO HIPOTÉTICO -->
+        <div class="caso-tutela">
+          <h3>📋 Caso hipotético: libre desarrollo de la personalidad</h3>
+          <!-- TEXTO DE EJEMPLO: Caso ficticio sobre libre desarrollo de la personalidad (Art. 16 C.P.) -->
+          <div class="caso-bloque">
+            <h4>1. Hechos</h4>
+            <p>Un estudiante de grado décimo decide usar el cabello largo como expresión de su identidad. La institución educativa le prohíbe asistir a clase argumentando el manual de convivencia, afectando su derecho a continuar su proceso educativo.</p>
+          </div>
+          <div class="caso-bloque">
+            <h4>2. Derecho vulnerado</h4>
+            <p>Libre desarrollo de la personalidad (Art. 16 C.P.) y derecho a la educación (Art. 67 C.P.).</p>
+          </div>
+          <div class="caso-bloque">
+            <h4>3. Acción</h4>
+            <p>El estudiante, con su acudiente, presenta una acción de tutela ante un juez municipal indicando los hechos, el derecho vulnerado y la orden que solicita.</p>
+          </div>
+          <div class="caso-bloque">
+            <h4>4. Resultado</h4>
+            <p>El juez concede la tutela y ordena a la institución readmitir al estudiante, considerando que el manual de convivencia no puede limitar un derecho fundamental.</p>
+          </div>
+        </div>
+
+        <!-- GUÍA PASO A PASO -->
+        <div class="srpa-flujo">
+          <div class="srpa-paso">
+            <div class="srpa-circulo">1</div>
+            <h3>Identificar</h3>
+            <p>Detecta qué derecho fundamental te fue vulnerado o amenazado.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">2</div>
+            <h3>Redactar</h3>
+            <p>Escribe los hechos, el derecho vulnerado y la orden que pides. No necesitas abogado.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">3</div>
+            <h3>Radicar</h3>
+            <p>Presenta el escrito en el juzgado competente, la personería o por medios electrónicos.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">4</div>
+            <h3>Respuesta</h3>
+            <p>El juez tiene 10 días para decidir. La tutela es gratuita.</p>
+          </div>
+        </div>
+
+        <div class="destacado">
+          <h4>📌 Recuerda</h4>
+          <p>La tutela procede cuando no existan otros medios de defensa judicial, o cuando se use como mecanismo transitorio para evitar un perjuicio irremediable.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('entrevista-constitucional')">← Entrevista</button>
+        <button class="btn btn-nav" onclick="irASeccion('codigo-infancia')">Código de infancia →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 08 · CÓDIGO DE INFANCIA Y ADOLESCENCIA -->
+    <!-- ========================= -->
+    <section id="codigo-infancia" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">08</span>
+        <h2 class="seccion-titulo">Código de Infancia y Adolescencia</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">👧👦 Ley 1098 de 2006</div>
+
+        <div class="tarjeta">
+          <h3>Reportaje Central: Sujetos de Derechos</h3>
+          <!-- TEXTO DE EJEMPLO: Reportaje sobre los tres principios rectores -->
+          <p>El Código de la Infancia y la Adolescencia (Ley 1098 de 2006) reconoce a los niños, niñas y adolescentes como sujetos de derechos. Esta ley se fundamenta en tres principios rectores que orientan todas las decisiones que los afectan.</p>
+          <p><strong>El interés superior del niño, niña o adolescente</strong> significa que en toda decisión que los involucre, su bienestar y su desarrollo integral deben ser la prioridad absoluta. No basta con protegerlos: hay que garantizar las condiciones para que crezcan en dignidad.</p>
+          <p><strong>La protección integral</strong> exige prevenir, garantizar y restablecer los derechos cuando son amenazados o vulnerados. No se trata solo de reaccionar ante el daño, sino de crear entornos seguros en la familia, la escuela y la comunidad.</p>
+          <p><strong>La corresponsabilidad</strong> establece que la familia, la sociedad y el Estado comparten la obligación de asegurar el ejercicio de los derechos. Ninguno puede delegar su responsabilidad en otro: los tres deben actuar de forma coordinada.</p>
+        </div>
+
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>👨‍👩‍👧 Familia</h3>
+            <p>Núcleo fundamental responsable de asegurar el cuidado, el afecto y la garantía de los derechos de los menores.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>🏫 Sociedad</h3>
+            <p>Las instituciones educativas, los medios y la comunidad deben contribuir a entornos protectores.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>⚖️ Estado</h3>
+            <p>Garantiza las condiciones materiales y jurídicas para el ejercicio de los derechos de la niñez.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('accion-tutela')">← Tutela</button>
+        <button class="btn btn-nav" onclick="irASeccion('principios-infancia')">Principios →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 09 · PRINCIPIOS DEL CÓDIGO DE INFANCIA -->
+    <!-- ========================= -->
+    <section id="principios-infancia" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">09</span>
+        <h2 class="seccion-titulo">Principios del Código de Infancia</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <div class="lista-principios">
+          <div class="principio-item">
+            <span class="principio-num">1</span>
+            <div><h3>Interés superior</h3><p>Toda decisión debe priorizar el bienestar del niño, niña o adolescente.</p></div>
+          </div>
+          <div class="principio-item">
+            <span class="principio-num">2</span>
+            <div><h3>Prevalencia de derechos</h3><p>Los derechos de los menores prevalecen sobre los demás.</p></div>
+          </div>
+          <div class="principio-item">
+            <span class="principio-num">3</span>
+            <div><h3>Corresponsabilidad</h3><p>Familia, sociedad y Estado comparten la responsabilidad de garantizar los derechos.</p></div>
+          </div>
+          <div class="principio-item">
+            <span class="principio-num">4</span>
+            <div><h3>Igualdad</h3><p>Todos los niños tienen los mismos derechos sin discriminación.</p></div>
+          </div>
+          <div class="principio-item">
+            <span class="principio-num">5</span>
+            <div><h3>Participación</h3><p>Los menores tienen derecho a ser escuchados en los asuntos que les afectan.</p></div>
+          </div>
+          <div class="principio-item">
+            <span class="principio-num">6</span>
+            <div><h3>Desarrollo integral</h3><p>Se busca el crecimiento armónico en lo físico, mental, social y espiritual.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('codigo-infancia')">← Código de infancia</button>
+        <button class="btn btn-nav" onclick="irASeccion('infografia-srpa')">SRPA →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 10 · INFOGRAFÍA SRPA -->
+    <!-- ========================= -->
+    <section id="infografia-srpa" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">10</span>
+        <h2 class="seccion-titulo">Infografía: SRPA</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Sistema de Responsabilidad Penal para Adolescentes (SRPA, Ley 1098 de 2006): ruta legal y sancionatoria para jóvenes entre 14 y 18 años que incurren en conductas punibles, con enfoque pedagógico, restaurador y protector.</p>
+
+        <div class="srpa-flujo">
+          <div class="srpa-paso">
+            <div class="srpa-circulo">1</div>
+            <h3>Conducta punible</h3>
+            <p>Un adolescente entre 14 y 18 años comete un delito tipificado por la ley penal.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">2</div>
+            <h3>Captura</h3>
+            <p>Con orden judicial, presencia del defensor y de un familiar. Se informa al ICBF.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">3</div>
+            <h3>Juez de adolescentes</h3>
+            <p>Proceso ante juez especializado, con garantía del debido proceso y del derecho de defensa.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">4</div>
+            <h3>Sanción</h3>
+            <p>El juez impone una medida según la gravedad, con finalidad pedagógica.</p>
+          </div>
+          <div class="srpa-flecha">→</div>
+          <div class="srpa-paso">
+            <div class="srpa-circulo">5</div>
+            <h3>Restauración</h3>
+            <p>Reparar el daño y reintegrar al adolescente a la familia y la sociedad.</p>
+          </div>
+        </div>
+
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>🤝 Amonestación</h3>
+            <p>Advertencia y compromiso del adolescente y su familia. Para conductas leves.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>📋 Libertad asistida</h3>
+            <p>Supervisión por un consejero del programa. Para conductas de mediana gravedad.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>🏠 Internamiento</h3>
+            <p>Privación de libertad en centro especializado. Último recurso, para conductas graves.</p>
+          </div>
+        </div>
+
+        <div class="destacado">
+          <h4>📌 Importante</h4>
+          <p>El SRPA no busca castigar, sino educar, restaurar y reintegrar. La privación de libertad es la última opción y se aplica solo en delitos graves. Los adolescentes menores de 14 años no son penalmente responsables.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('principios-infancia')">← Principios</button>
+        <button class="btn btn-nav" onclick="irASeccion('encuesta-bullying')">Bullying →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 11 · ENCUESTA DE BULLYING Y CIBERACOSO -->
+    <!-- ========================= -->
+    <section id="encuesta-bullying" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">11</span>
+        <h2 class="seccion-titulo">Encuesta: Bullying y Ciberacoso</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">🛡️ Convivencia escolar sin violencia</div>
+
+        <div class="tarjeta">
+          <h3>¿Qué es el bullying y el ciberacoso?</h3>
+          <p>El bullying es la agresión física, verbal o psicológica repetida hacia un compañero. El ciberacoso es la misma conducta usando medios digitales como redes sociales o mensajería.</p>
+        </div>
+
+        <!-- INSTRUMENTO DE LA ENCUESTA -->
+        <div class="tarjeta">
+          <h3>📋 Instrumento aplicado</h3>
+          <!-- TEXTO DE EJEMPLO: Estas son las preguntas de la encuesta. Reemplaza con las tuyas -->
+          <p><strong>Muestra:</strong> 40 estudiantes de bachillerato.</p>
+          <p><strong>Preguntas:</strong></p>
+          <ol>
+            <li>¿Conoces a alguien que haya sufrido bullying en el colegio?</li>
+            <li>¿Has presenciado ciberacoso en redes sociales hacia algún compañero?</li>
+            <li>¿Sabes a quién acudir si sufres algún tipo de acoso?</li>
+            <li>¿Consideras que el colegio debe hacer más para prevenir el acoso?</li>
+          </ol>
+        </div>
+
+        <!-- TEXTO DE EJEMPLO: Estos porcentajes son ficticios. Realiza tu encuesta y reemplaza los datos -->
+        <div class="encuesta-resultados">
+          <h3>📊 Resultados (n=40 estudiantes)</h3>
+          <div class="barra">
+            <span class="barra-label">1. Conoce a alguien que ha sufrido bullying</span>
+            <div class="barra-progreso"><div style="width:62%"></div></div>
+            <span class="barra-valor">62%</span>
+          </div>
+          <div class="barra">
+            <span class="barra-label">2. Ha visto ciberacoso en redes sociales</span>
+            <div class="barra-progreso"><div style="width:48%"></div></div>
+            <span class="barra-valor">48%</span>
+          </div>
+          <div class="barra">
+            <span class="barra-label">3. Sabe a quién acudir si sufre acoso</span>
+            <div class="barra-progreso"><div style="width:55%"></div></div>
+            <span class="barra-valor">55%</span>
+          </div>
+          <div class="barra">
+            <span class="barra-label">4. Considera que el colegio debe hacer más</span>
+            <div class="barra-progreso"><div style="width:70%"></div></div>
+            <span class="barra-valor">70%</span>
+          </div>
+        </div>
+
+        <!-- ANÁLISIS INTERPRETATIVO -->
+        <div class="destacado">
+          <h4>📈 Análisis interpretativo</h4>
+          <!-- TEXTO DE EJEMPLO: Reemplaza con el análisis de tus datos reales -->
+          <p>Los resultados muestran que más de la mitad de los estudiantes encuestados conocen a alguien que ha sufrido bullying, lo que indica que el acoso escolar es una realidad presente en la institución. El 48% ha presenciado ciberacoso, evidenciando que las redes digitales son un nuevo escenario de violencia. Preocupantemente, solo el 55% sabe a quién acudir, lo que sugiere la necesidad de difundir mejor las rutas de atención. El 70% considera que el colegio debe hacer más, lo que refleja una demanda de mayor prevención. Recomendamos fortalecer el Comité de Convivencia, crear campañas de concientización y capacitar a los estudiantes en el uso responsable de las redes.</p>
+        </div>
+
+        <div class="destacado">
+          <h4>🆘 ¿Dónde denunciar?</h4>
+          <p>Línea 106 de ICBF · Línea 123 (emergencias) · Comités de Convivencia Escolar · Personería estudiantil.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('infografia-srpa')">← SRPA</button>
+        <button class="btn btn-nav" onclick="irASeccion('directorio-proteccion')">Directorio →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 12 · DIRECTORIO DE PROTECCIÓN -->
+    <!-- ========================= -->
+    <section id="directorio-proteccion" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">12</span>
+        <h2 class="seccion-titulo">Directorio de Protección</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Rutas de atención inmediata y líneas de contacto para la protección de la infancia y la adolescencia.</p>
+        <div class="directorio-grid">
+          <!-- TEXTO DE EJEMPLO: Verifica los números oficiales de tu municipio -->
+          <div class="directorio-card">
+            <div class="directorio-icono">🚨</div>
+            <h3>Emergencias</h3>
+            <p class="directorio-num">123</p>
+            <p>Policía, bomberos y salud</p>
+          </div>
+          <div class="directorio-card">
+            <div class="directorio-icono">👶</div>
+            <h3>ICBF</h3>
+            <p class="directorio-num">106</p>
+            <p>Instituto Colombiano de Bienestar Familiar — protección a la infancia</p>
+          </div>
+          <div class="directorio-card">
+            <div class="directorio-icono">🏡</div>
+            <h3>Comisaría de Familia</h3>
+            <p class="directorio-num">[Teléfono]</p>
+            <p>Violencia intrafamiliar, custodia y alimentos</p>
+          </div>
+          <div class="directorio-card">
+            <div class="directorio-icono">�</div>
+            <h3>Policía de Infancia</h3>
+            <p class="directorio-num">[Teléfono]</p>
+            <p>Policía de Infancia y Adolescencia (DIJIN)</p>
+          </div>
+          <div class="directorio-card">
+            <div class="directorio-icono">👩</div>
+            <h3>Línea Mujeres</h3>
+            <p class="directorio-num">155</p>
+            <p>Violencia contra la mujer</p>
+          </div>
+          <div class="directorio-card">
+            <div class="directorio-icono">📞</div>
+            <h3>Personería Municipal</h3>
+            <p class="directorio-num">[Teléfono]</p>
+            <p>Derechos ciudadanos y tutela</p>
+          </div>
+        </div>
+
+        <div class="destacado">
+          <h4>📌 Recuerda</h4>
+          <p>La Línea 106 del ICBF atiende denuncias de maltrato, abandono y vulneración de derechos de niños, niñas y adolescentes de forma gratuita y las 24 horas.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('encuesta-bullying')">← Bullying</button>
+        <button class="btn btn-nav" onclick="irASeccion('deberes-derechos')">Deberes vs. derechos →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 13 · DEBERES VERSUS DERECHOS -->
+    <!-- ========================= -->
+    <section id="deberes-derechos" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">13</span>
+        <h2 class="seccion-titulo">Deberes versus Derechos</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Los derechos y los deberes son las dos caras de la misma moneda. No hay derechos sin responsabilidades.</p>
+
+        <div class="tarjeta">
+          <h3>Columna: Deberes vs. Derechos</h3>
+          <!-- TEXTO DE EJEMPLO: Ensayo reflexivo de 150 a 200 palabras -->
+          <p>Hablar de derechos es hablar de libertades, pero también de responsabilidades. Los adolescentes colombianos gozan de derechos fundamentales consagrados en la Constitución: a la educación, a la salud, a la participación y al libre desarrollo de la personalidad. Sin embargo, cada derecho conlleva un deber correlativo que a menudo olvidamos.</p>
+          <p>El deber de estudiar es la contraparte del derecho a la educación. El deber de respetar a los demás acompaña al derecho a la libre expresión. El deber de cuidar el entorno público responde al derecho a disfrutar de la ciudad. El Código de Infancia y Adolescencia (Ley 1098 de 2006) enumera deberes específicos: respetar a los padres y maestros, cumplir el manual de convivencia, defender y difundir los derechos humanos y abstenerse de consumir sustancias psicoactivas.</p>
+          <p>Una ciudadanía plena no se construye solo exigiendo derechos, sino asumiendo los deberes que los sustentan. Ese equilibrio es la base de la convivencia democrática y la responsabilidad social.</p>
+        </div>
+
+        <div class="comparativa">
+          <div class="comparativa-col comparativa-derechos">
+            <h3>✅ Derechos</h3>
+            <ul>
+              <li>Derecho a la vida e integridad</li>
+              <li>Derecho a la educación</li>
+              <li>Derecho a la libre expresión</li>
+              <li>Derecho a la participación</li>
+              <li>Derecho a la igualdad</li>
+              <li>Derecho a la salud</li>
+            </ul>
+          </div>
+          <div class="comparativa-col comparativa-deberes">
+            <h3>📋 Deberes</h3>
+            <ul>
+              <li>Respetar la vida de los demás</li>
+              <li>Cumplir las normas escolares</li>
+              <li>Escuchar con respeto</li>
+              <li>Participar de forma responsable</li>
+              <li>Tratar a todos por igual</li>
+              <li>Cuidar el entorno y la salud</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('directorio-proteccion')">← Directorio</button>
+        <button class="btn btn-nav" onclick="irASeccion('violencia-genero')">Violencia de género →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 14 · VIOLENCIA DE GÉNERO -->
+    <!-- ========================= -->
+    <section id="violencia-genero" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">14</span>
+        <h2 class="seccion-titulo">Violencia de Género</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">✊ Igualdad y respeto</div>
+
+        <div class="tarjeta">
+          <h3>Artículo Investigativo: El Espectro de la Violencia de Género</h3>
+          <!-- TEXTO DE EJEMPLO: Artículo de 300 a 400 palabras -->
+          <p>La violencia de género no es un acto aislado: es un espectro de conductas que pueden coexistir y escalar. Reconocer cada manifestación es el primer paso para prevenirla. La Ley 1257 de 2008 define y sanciona las distintas formas de violencia contra la mujer en Colombia.</p>
+          <p><strong>Violencia física:</strong> es toda acción que causa daño corporal. Ejemplo cotidiano: empujar, golpear o arrojar objetos durante una discusión, minimizado muchas veces como "un altercado normal".</p>
+          <p><strong>Violencia psicológica:</strong> causa daño emocional y menoscabo de la autoestima. Ejemplo: humillaciones en público, insultos constantes, amenazas, silencios castigadores o controlar con quién se habla y qué se usa.</p>
+          <p><strong>Violencia económica:</strong> busca generar dependencia financiera. Ejemplo: prohibir trabajar, quitar el salario, no dar dinero para gastos básicos o controlar todos los recursos del hogar.</p>
+          <p><strong>Violencia sexual:</strong> cualquier acto que vulnere la integridad sexual sin consentimiento. Ejemplo: presionar o forzar relaciones, tocar sin permiso o compartir imágenes íntimas sin autorización (ciberacoso sexual).</p>
+          <p><strong>Violencia simbólica:</strong> mensajes, imágenes o estereotipos que naturalizan la desigualdad. Ejemplo: chistes que ridiculizan a las mujeres, comentarios sobre el cuerpo o el rol que "debería" cumplir cada género.</p>
+          <p>Estas cinco manifestaciones no siempre son evidentes. La violencia psicológica y la simbólica suelen preceder a las demás y son las más difíciles de identificar. Por eso es esencial la educación y la alerta temprana. Ningún tipo de violencia está justificada. Denunciar y acompañar salva vidas.</p>
+        </div>
+
+        <div class="destacado">
+          <h4>🆘 Dónde acudir</h4>
+          <p>Línea 155 (Mujeres) · Comisarías de Familia · Fiscalía · Personería · Línea 123 (emergencias).</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('deberes-derechos')">← Deberes vs. derechos</button>
+        <button class="btn btn-nav" onclick="irASeccion('banderas-rojas')">Banderas rojas →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 15 · BANDERAS ROJAS -->
+    <!-- ========================= -->
+    <section id="banderas-rojas" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">15</span>
+        <h2 class="seccion-titulo">Banderas Rojas</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Entrevista de impacto: alertas tempranas de violencia de género en el noviazgo adolescente.</p>
+
+        <!-- ENTREVISTA A PSICÓLOGA ANA -->
+        <div class="entrevista">
+          <div class="entrevista-persona">
+            <!-- Sin foto de la profesional — se muestra evidencia del escrito con firma -->
+            <div class="evidencia-escrito">
+              <img
+                src="Imagenes/WhatsApp Image 2026-10-23 at 11.18.16 PM.jpeg"
+                alt="Escrito y firma de la psicóloga Ana"
+                class="entrevista-foto"
+              >
+              <div class="evidencia-badge">📄 Escrito y firma de la profesional</div>
+            </div>
+            <h3>Ana</h3>
+            <p class="cargo">Psicóloga</p>
+          </div>
+          <div class="entrevista-dialogo">
+            <p class="pregunta">
+              <span class="pregunta-num">01</span>
+              <strong>¿Qué son las "banderas rojas" en una relación de noviazgo adolescente?</strong>
+            </p>
+            <p class="respuesta"><strong>Respuesta:</strong> Son señales de alerta que indican que una relación puede volverse abusiva. Aparecen temprano y suelen normalizarse: celos, control, humillaciones o aislamiento.</p>
+            <p class="pregunta">
+              <span class="pregunta-num">02</span>
+              <strong>¿Cuáles son las más comunes en adolescentes?</strong>
+            </p>
+            <p class="respuesta"><strong>Respuesta:</strong> Los celos disfrazados de amor, el control de las redes sociales, exigir saber dónde está la pareja en todo momento y las críticas constantes que bajan la autoestima.</p>
+            <p class="pregunta">
+              <span class="pregunta-num">03</span>
+              <strong>¿Qué deben hacer los jóvenes al detectarlas?</strong>
+            </p>
+            <p class="respuesta"><strong>Respuesta:</strong> Hablar con alguien de confianza, buscar apoyo psicológico y denunciar si hay amenazas. La Línea 155 atiende violencia de género gratis y las 24 horas.</p>
+          </div>
+        </div>
+
+        <div class="banderas-lista">
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Celos excesivos</h3><p>Controla con quién hablas y dónde estás.</p></div>
+          </div>
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Aislamiento</h3><p>Te aleja de tu familia y amistades.</p></div>
+          </div>
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Humillaciones</h3><p>Te critica y menoscública en público o en privado.</p></div>
+          </div>
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Control de redes</h3><p>Exige tus contraseñas o revisa tus mensajes.</p></div>
+          </div>
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Amenazas</h3><p>Intimida para que hagas lo que quiere.</p></div>
+          </div>
+          <div class="bandera-item">
+            <span class="bandera-emoji">🚩</span>
+            <div><h3>Culpa constante</h3><p>Hace que todo sea tu responsabilidad y culpa.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('violencia-genero')">← Violencia de género</button>
+        <button class="btn btn-nav" onclick="irASeccion('ley-rosa-elvira')">Ley Rosa Elvira →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 16 · LEY ROSA ELVIRA CELY -->
+    <!-- ========================= -->
+    <section id="ley-rosa-elvira" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">16</span>
+        <h2 class="seccion-titulo">Ley Rosa Elvira Cely</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">🌸 Justicia y memoria</div>
+
+        <div class="tarjeta">
+          <h3>Análisis Legal: Ley Rosa Elvira Cely (Ley 1761 de 2015)</h3>
+          <!-- TEXTO DE EJEMPLO: Hecho real, redactado con tono educativo -->
+          <p>La Ley 1761 de 2015, conocida como "Ley Rosa Elvira Cely", se creó tras el feminicidio de Rosa Elvira Cely en 2012. Esta ley tipificó el feminicidio como delito autónomo en Colombia (Art. 116 del Código Penal) y estableció medidas de protección y prevención.</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3>¿En qué se diferencia el feminicidio del homicidio común?</h3>
+          <p>El <strong>homicidio común</strong> (Art. 103 C.P.) consiste en causar la muerte a otra persona, con pena de 13 a 25 años. El <strong>feminicidio</strong> es la muerte de una mujer por su condición de mujer o por motivos de género: se mata porque es mujer. La pena va de 20 a 50 años, claramente agravada.</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3>Causales de agravación punitiva</h3>
+          <p>La pena se agrava cuando: la víctima estaba embarazada, era menor o adulta mayor; el agresor era pareja o ex pareja; había violencia sexual previa o concomitante; el hecho se cometió en presencia de hijos; o existía un pattern de violencia de género en la relación.</p>
+        </div>
+
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>🛡️ Protección</h3>
+            <p>Fortalece medidas de protección para mujeres víctimas de violencia.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>📚 Prevención</h3>
+            <p>Obliga al Estado a promover educación y campañas contra la violencia por género.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('banderas-rojas')">← Banderas rojas</button>
+        <button class="btn btn-nav" onclick="irASeccion('derechos-sexuales')">Derechos sexuales →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 17 · DERECHOS SEXUALES Y REPRODUCTIVOS -->
+    <!-- ========================= -->
+    <section id="derechos-sexuales" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">17</span>
+        <h2 class="seccion-titulo">Derechos Sexuales y Reproductivos</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">❤️ Información y autonomía</div>
+
+        <div class="tarjeta">
+          <h3>Reportaje a Fondo: Derechos Reproductivos</h3>
+          <!-- TEXTO DE EJEMPLO: Reportaje de 400 a 500 palabras -->
+          <p>Los derechos sexuales y reproductivos son derechos humanos fundamentales que garantizan a toda persona la capacidad de tomar decisiones libres, informadas y responsables sobre su cuerpo, su sexualidad y su reproducción, sin coerción, discriminación ni violencia. En Colombia, la Constitución los protege a través del derecho al libre desarrollo de la personalidad (Art. 16) y del derecho a la salud (Art. 49).</p>
+          <p><strong>Educación integral para la sexualidad:</strong> La Ley 1620 de 2013 creó el Sistema Nacional de Convivencia Escolar y estableció la obligación de implementar proyectos pedagógicos de educación para la sexualidad y afectividad. Esta educación no se limita a la biología: abarca el respeto, el consentimiento, la equidad de género, la prevención del abuso y el uso responsable de la información digital. La educación sexual integral permite que los adolescentes tomen decisiones informadas y seguras.</p>
+          <p><strong>Acceso a métodos anticonceptivos:</strong> El Estado debe garantizar el acceso a métodos de planificación familiar modernos y seguros. La Corte Constitucional ha señalado que negar este acceso vulnera los derechos a la salud, a la igualdad y a la autonomía. Los jóvenes tienen derecho a recibir información sobre anticonceptivos y a acceder a ellos en los servicios de salud, sin necesidad de autorización de sus padres para recibir información y asesoría.</p>
+          <p><strong>Fallos constitucionales sobre la autonomía corporal:</strong> La Corte Constitucional colombiana ha sido pionera en proteger la autonomía reproductiva. La Sentencia C-355 de 2006 despenalizó el aborto en tres causales: violación, riesgo para la salud de la mujer y malformación del feto. La Sentencia C-810 de 2006 protegió el derecho a decidir sobre el propio cuerpo. Más recientemente, en 2022, la Corte despenalizó el aborto hasta la semana 24 de gestación. Estos fallos reconocen que la autonomía corporal es un derecho fundamental.</p>
+          <p>Conocer estos derechos es esencial. La ignorancia no protege: expone. La información, en cambio, empodera, previene embarazos no deseados, reduce la violencia y promueve la salud. Profamilia y los servicios de salud del Estado ofrecen asesoría gratuita y confidencial.</p>
+        </div>
+
+        <div class="lista-derechos">
+          <div class="derecho-item">
+            <h3>1. Decidir libremente</h3>
+            <p>Sobre el cuerpo, la sexualidad y la reproducción sin coerción.</p>
+          </div>
+          <div class="derecho-item">
+            <h3>2. Información</h3>
+            <p>Acceso a educación sexual integral y científica.</p>
+          </div>
+          <div class="derecho-item">
+            <h3>3. Salud reproductiva</h3>
+            <p>Acceso a servicios de salud sexual y reproductiva.</p>
+          </div>
+          <div class="derecho-item">
+            <h3>4. Consentimiento</h3>
+            <p>Toda actividad sexual debe basarse en el consentimiento libre e informado.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('ley-rosa-elvira')">← Ley Rosa Elvira</button>
+        <button class="btn btn-nav" onclick="irASeccion('test-mito-realidad')">Test interactivo →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 18 · TEST INTERACTIVO MITO VS REALIDAD -->
+    <!-- ========================= -->
+    <section id="test-mito-realidad" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">18</span>
+        <h2 class="seccion-titulo">Test Interactivo: Mito vs. Realidad</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Pon a prueba tus conocimientos y desmitifica creencias erróneas sobre género y derechos reproductivos.</p>
+
+        <div class="test-contenedor" id="testContenedor">
+          <div class="test-inicio" id="testInicio">
+            <h3>¿Cuánto sabes?</h3>
+            <p>Responde 6 preguntas. Al final verás tu puntuación.</p>
+            <button class="btn btn-primario" id="btnIniciarTest">Comenzar test 🧠</button>
+          </div>
+
+          <div class="test-pregunta" id="testPregunta" hidden>
+            <div class="test-progreso">
+              <span id="testContador">Pregunta 1 de 6</span>
+              <div class="test-barra"><div id="testBarraRelleno"></div></div>
+            </div>
+            <h3 id="testEnunciado"></h3>
+            <div class="test-opciones" id="testOpciones"></div>
+          </div>
+
+          <div class="test-resultado" id="testResultado" hidden>
+            <h3 id="testTituloResultado"></h3>
+            <p id="testMensaje"></p>
+            <div class="test-puntaje" id="testPuntaje"></div>
+            <button class="btn btn-primario" id="btnReiniciarTest">Volver a intentar 🔄</button>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('derechos-sexuales')">← Derechos sexuales</button>
+        <button class="btn btn-nav" onclick="irASeccion('poster-prevencion')">Póster preventivo →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 18b · PÓSTER DE PREVENCIÓN -->
+    <!-- ========================= -->
+    <section id="poster-prevencion" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">18b</span>
+        <h2 class="seccion-titulo">Póster de Prevención: Violencia de Género</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- TEXTO DE EJEMPLO: Este póster debe imprimirse a color, mínimo 50 cm × 40 cm, para fijar en los murales del colegio -->
+        <div class="poster">
+          <div class="poster-contenido">
+            <h2 class="poster-titulo">NO A LA VIOLENCIA DE GÉNERO</h2>
+            <p class="poster-mensaje">El amor no controla, no golpea, no humilla, no calla.</p>
+
+            <div class="poster-canales">
+              <div class="poster-canal">
+                <span class="poster-canal-num">155</span>
+                <p>Línea Mujeres<br>24 horas · Gratis</p>
+              </div>
+              <div class="poster-canal">
+                <span class="poster-canal-icono">🏥</span>
+                <p>Profamilia<br>Asesoría confidencial</p>
+              </div>
+              <div class="poster-canal">
+                <span class="poster-canal-icono">⚖️</span>
+                <p>Fiscalía · Comisarías<br>Denuncia formal</p>
+              </div>
+            </div>
+
+            <p class="poster-consigna">Si tú o alguien que conoces vive violencia: <strong>habla, busca ayuda, rompe el silencio</strong>.</p>
+          </div>
+        </div>
+        <p class="intro">📌 Imprime este póster a color (mínimo 50 cm × 40 cm) y fíjalo en los murales de la institución.</p>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('test-mito-realidad')">← Test</button>
+        <button class="btn btn-nav" onclick="irASeccion('convivencia-policia')">Código de policía →</button>
+      </div>
+    </section>
+    <section id="convivencia-policia" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">19</span>
+        <h2 class="seccion-titulo">Convivencia y Código de Policía</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">🤝 Convivencia pacífica</div>
+
+        <div class="tarjeta">
+          <h3>Código Nacional de Policía y Convivencia (Ley 1801 de 2016)</h3>
+          <p>Regula la convivencia ciudadana y establece medidas correctivas para comportamientos que afectan la tranquilidad y el respeto entre las personas. A continuación, cinco situaciones cotidianas contrastando la creencia popular con la regulación legal.</p>
+        </div>
+
+        <!-- 5 SITUACIONES: MITO VS. REALIDAD -->
+        <div class="comparativa">
+          <div class="comparativa-col comparativa-derechos">
+            <h3>🤔 Mito (creencia popular)</h3>
+            <ul>
+              <li><strong>1. Ruido:</strong> "En mi casa puedo poner la música tan alta como quiera a cualquier hora."</li>
+              <li><strong>2. Mascotas:</strong> "Mi perro puede andar suelto en el parque porque es tranquilo."</li>
+              <li><strong>3. Alcohol:</strong> "Tomar cerveza en el parque con amigos no es delito."</li>
+              <li><strong>4. Basuras:</strong> "Tirar un papel pequeño al piso no pasa nada."</li>
+              <li><strong>5. Rayar paredes:</strong> "Hacer grafitis es arte y nadie puede impedirlo."</li>
+            </ul>
+          </div>
+          <div class="comparativa-col comparativa-deberes">
+            <h3>⚖️ Realidad (Ley 1801/2016)</h3>
+            <ul>
+              <li><strong>1. Ruido (Art. 27):</strong> Los ruidos que perturban la tranquilidad generan medida correctiva, especialmente en horarios nocturnos.</li>
+              <li><strong>2. Mascotas (Art. 128):</strong> Los dueños deben llevarlos con correa, recoger sus excrementos y asegurar que no agredan a personas.</li>
+              <li><strong>3. Alcohol (Art. 140):</strong> Consumir sustancias en espacio público está prohibido y genera comparendo ambiental o pedagógico.</li>
+              <li><strong>4. Basuras (Art. 87):</strong> Arrojar residuos en el espacio público genera multa y trabajo comunitario.</li>
+              <li><strong>5. Rayar paredes (Art. 34):</strong> Dañar el espacio público con pinturas sin autorización genera medida correctiva.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="destacado">
+          <h4>📌 Importante</h4>
+          <p>Las medidas correctivas del Código de Policía no son penales: son pedagógicas, participativas y reparadoras. Buscan educar, no castigar.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('poster-prevencion')">← Póster</button>
+        <button class="btn btn-nav" onclick="irASeccion('fotoreportaje-movilidad')">Movilidad →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 20 · FOTOREPORTAJE DE MOVILIDAD -->
+    <!-- ========================= -->
+    <section id="fotoreportaje-movilidad" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">20</span>
+        <h2 class="seccion-titulo">Fotoreportaje de Movilidad</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Un recorrido visual por la movilidad en inmediaciones del colegio. Código Nacional de Tránsito (Ley 769 de 2002).</p>
+
+        <!-- FOTOS DE EJEMPLO: Reemplaza cada placeholder por <img src="ruta/foto.jpg" alt="..."> -->
+        <div class="galeria">
+          <figure class="galeria-item">
+            <img src="Imagenes/WhatsApp Image 2026-10-23 at 11.54.08 PM.jpeg" alt="Cruce seguro por paso peatonal" class="galeria-foto">
+            <figcaption>✅ Buena conducta: cruzar por el paso peatonal (Art. 56).</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <img src="Imagenes/WhatsApp Image 2026-10-23 at 11.55.34 PM.jpeg" alt="Ciclista sin casco" class="galeria-foto">
+            <figcaption>❌ Mala conducta: no usar casco (Art. 98).</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <img src="Imagenes/WhatsApp Image 2026-10-23 at 11.56.53 PM.jpeg" alt="Motociclista con casco" class="galeria-foto">
+            <figcaption>✅ Buena conducta: uso de casco y chaleco (Art. 98).</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <img src="Imagenes/WhatsApp Image 2026-10-23 at 11.58.23 PM.jpeg" alt="Exceso de velocidad en zona escolar" class="galeria-foto">
+            <figcaption>❌ Mala conducta: exceder límite en zona escolar (Art. 106).</figcaption>
+          </figure>
+        </div>
+
+        <div class="destacado">
+          <h4>📊 Dato</h4>
+          <p>El Art. 131 de la Ley 769 obliga a respetar los límites de velocidad en zonas escolares. El comparendo por infracción puede ser de tipo E o superior.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('convivencia-policia')">← Código de policía</button>
+        <button class="btn btn-nav" onclick="irASeccion('proteccion-animal')">Protección animal →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 21 · PROTECCIÓN ANIMAL -->
+    <!-- ========================= -->
+    <section id="proteccion-animal" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">21</span>
+        <h2 class="seccion-titulo">Protección Animal</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">🐶 Adóptame, no me compres</div>
+
+        <div class="tarjeta">
+          <h3>Artículo Especial: Ley contra el Maltrato Animal (Ley 1774 de 2016)</h3>
+          <p>La Ley 1774 de 2016 modificó el Código Penal y reconoció a los animales como <strong>seres sintientes</strong>: capaces de sentir dolor y sufrimiento. Esto significa que el maltrato animal no es solo una falta: es un delito penado por la ley colombiana.</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3>Sanciones vigentes para los agresores</h3>
+          <p><strong>Sanciones económicas:</strong> multas de 5 a 50 salarios mínimos legales mensuales vigentes (SMLMV), según la gravedad de la conducta.</p>
+          <p><strong>Penas privativas de libertad:</strong> el maltrato animal está tipificado en el Art. 339 del Código Penal, con pena de 12 a 36 meses de prisión y multa. Si la conducta se agrava (especial ensañamiento, reincidencia o conducta con animales silvestres), la pena se incrementa.</p>
+        </div>
+
+        <div class="tarjetas-grid">
+          <div class="tarjeta">
+            <h3>❤️ Adoptar</h3>
+            <p>Dar hogar a un animal sin dueño salva vidas.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>🩺 Salud</h3>
+            <p>Vacunas, desparasitación y controles veterinarios.</p>
+          </div>
+          <div class="tarjeta">
+            <h3>⚖️ Denunciar</h3>
+            <p>El maltrato animal se denuncia ante la Fiscalía o la Policía de Policía.</p>
+          </div>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('fotoreportaje-movilidad')">← Movilidad</button>
+        <button class="btn btn-nav" onclick="irASeccion('tenencia-responsable')">Tenencia responsable →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 22 · CAMPAÑA DE TENENCIA RESPONSABLE -->
+    <!-- ========================= -->
+    <section id="tenencia-responsable" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">22</span>
+        <h2 class="seccion-titulo">Campaña: Tenencia Responsable</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <p class="intro">Adoptar es un compromiso de tiempo y dinero. Conoce la inversión real antes de decidir.</p>
+
+        <!-- FOTOS DE EJEMPLO: En colaboración con una fundación o albergue local. Reemplaza con fotos reales -->
+        <div class="galeria galeria-adopcion">
+          <figure class="galeria-item">
+            <div class="placeholder-img placeholder-galeria">🐕 Adopta</div>
+            <figcaption>Animales esperando un hogar en el albergue.</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <div class="placeholder-img placeholder-galeria">🤝 Voluntariado</div>
+            <figcaption>Visita y apoya a tu albergue local.</figcaption>
+          </figure>
+          <figure class="galeria-item">
+            <div class="placeholder-img placeholder-galeria">🏠 Hogar</div>
+            <figcaption>Una mascota bien cuidada es feliz.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Precios actualizados a valores reales Colombia 2026 -->
+        <h3 class="subtitulo-tabla">💰 Inversión económica estimada — Colombia 2026</h3>
+        <div class="tabla-responsiva">
+          <table class="tabla">
+            <thead>
+              <tr><th>Concepto</th><th>Costo mensual aprox.</th><th>Notas</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Alimentación (concentrado premium 5 kg)</td><td>$ 120.000 – $ 180.000</td><td>Varía según raza y tamaño</td></tr>
+              <tr><td>Veterinario — consulta de rutina</td><td>$ 80.000 – $ 130.000</td><td>Aprox. 1 visita/mes</td></tr>
+              <tr><td>Vacunas y desparasitación (promedio mensualizado)</td><td>$ 40.000 – $ 70.000</td><td>Esquema anual dividido</td></tr>
+              <tr><td>Medicamentos y vitaminas</td><td>$ 30.000 – $ 60.000</td><td>Antipulgas, antiparasitarios</td></tr>
+              <tr><td>Higiene: baño y peluquería</td><td>$ 60.000 – $ 120.000</td><td>Cada 4–6 semanas</td></tr>
+              <tr><td>Accesorios, juguetes y reposición</td><td>$ 30.000 – $ 60.000</td><td>Correa, cama, comedero, etc.</td></tr>
+              <tr><td>Imprevistos / emergencias (fondo mensual)</td><td>$ 80.000 – $ 150.000</td><td>Cirugías, accidentes</td></tr>
+              <tr class="tabla-total"><td><strong>Total mensual estimado</strong></td><td><strong>$ 440.000 – $ 770.000</strong></td><td>Perro mediano, Bogotá/Medellín</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="subtitulo-tabla">⏱️ Inversión de tiempo estimada</h3>
+        <div class="tabla-responsiva">
+          <table class="tabla">
+            <thead>
+              <tr><th>Actividad</th><th>Tiempo diario</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Paseos</td><td>1 - 2 horas</td></tr>
+              <tr><td>Alimentación</td><td>30 minutos</td></tr>
+              <tr><td>Juego y compañía</td><td>1 hora</td></tr>
+              <tr><td>Aseo y cuidado</td><td>30 minutos</td></tr>
+              <tr class="tabla-total"><td>Total diario</td><td>3 - 4 horas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="destacado">
+          <h4>📌 Recuerda</h4>
+          <p>Una mascota no es un regalo de temporada: es un compromiso de 10 a 15 años. Adoptar con responsabilidad evita el abandono.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('proteccion-animal')">← Protección animal</button>
+        <button class="btn btn-nav" onclick="irASeccion('reto-ecologico')">Reto ecológico →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 23 · RETO ECOLÓGICO -->
+    <!-- ========================= -->
+    <section id="reto-ecologico" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">23</span>
+        <h2 class="seccion-titulo">Reto Ecológico</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <!-- IMAGEN DE EJEMPLO -->
+        <div class="placeholder-img placeholder-grande">🌳 Cuida el planeta</div>
+
+        <div class="tarjeta">
+          <h3>Infografía: Reto Ecológico de 7 días</h3>
+          <p>Un desafío para reducir tu huella de carbono personal. Cada día enfoca una categoría: ahorro hídrico, eficiencia energética, gestión de residuos y movilidad sostenible. ¡Acepta el reto!</p>
+        </div>
+
+        <div class="reto-checklist">
+          <h3>✅ Mi reto de 7 días</h3>
+          <!-- TEXTO DE EJEMPLO: Puedes ajustar las acciones -->
+          <label class="reto-item"><input type="checkbox"> <strong>Día 1 (Agua):</strong> Cerrar el grifo al lavarme los dientes</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 2 (Energía):</strong> Apagar luces y aparatos que no uso</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 3 (Residuos):</strong> Separar reciclables de orgánicos</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 4 (Movilidad):</strong> Caminar o usar bicicleta al colegio</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 5 (Agua):</strong> Reducir el tiempo de ducha a 5 minutos</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 6 (Energía):</strong> Usar luz natural en vez de bombillos</label>
+          <label class="reto-item"><input type="checkbox"> <strong>Día 7 (Residuos):</strong> Rechazar plásticos de un solo uso</label>
+        </div>
+
+        <div class="destacado">
+          <h4>🌱 Dato</h4>
+          <p>Reciclar una lata de aluminio ahorra energía equivalente a tres horas de televisión. Si toda la clase completa el reto de 7 días, el impacto se multiplica por 30.</p>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('tenencia-responsable')">← Tenencia responsable</button>
+        <button class="btn btn-nav" onclick="irASeccion('pasatiempos')">Pasatiempos →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 24 · PASATIEMPOS -->
+    <!-- ========================= -->
+    <section id="pasatiempos" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">24</span>
+        <h2 class="seccion-titulo">Pasatiempos</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <div class="pasatiempos-grid">
+
+          <!-- ── SOPA DE LETRAS INTERACTIVA ── -->
+          <div class="tarjeta pasatiempo">
+            <h3>🔤 Sopa de letras</h3>
+            <p>Encuentra las 5 palabras jurídicas ocultas. Haz clic en la primera y última letra de cada palabra.</p>
+            <div class="sopa-palabras-buscadas">
+              <span id="sopa-TUTELA" class="sopa-badge">TUTELA</span>
+              <span id="sopa-COMPARENDO" class="sopa-badge">COMPARENDO</span>
+              <span id="sopa-FEMINICIDIO" class="sopa-badge">FEMINICIDIO</span>
+              <span id="sopa-ICBF" class="sopa-badge">ICBF</span>
+              <span id="sopa-PLEBISCITO" class="sopa-badge">PLEBISCITO</span>
+            </div>
+            <div id="sopaGrid" class="sopa-grid"></div>
+            <div class="sopa-controles">
+              <button class="btn btn-nav" onclick="reiniciarSopa()">🔄 Reiniciar</button>
+              <span id="sopaMsg" class="sopa-msg"></span>
+            </div>
+          </div>
+
+          <!-- ── CRUCIGRAMA INTERACTIVO ── -->
+          <div class="tarjeta pasatiempo">
+            <h3>🧩 Crucigrama jurídico</h3>
+            <p>Escribe las respuestas en las celdas. Las correctas se marcan en verde.</p>
+            <div id="crucigramaGrid" class="crucigrama-grid"></div>
+            <div class="crucigrama-pistas">
+              <p class="pista-titulo">➡️ Horizontales</p>
+              <p><strong>1.</strong> Mecanismo para proteger derechos fundamentales (6 letras)</p>
+              <p><strong>3.</strong> Homicidio de una mujer por su género (11 letras)</p>
+              <p><strong>5.</strong> Instituto que protege a la infancia (4 letras)</p>
+              <p class="pista-titulo">⬇️ Verticales</p>
+              <p><strong>2.</strong> Infracción de tránsito (9 letras)</p>
+              <p><strong>4.</strong> Decisión del pueblo mediante voto (10 letras)</p>
+            </div>
+            <div class="sopa-controles">
+              <button class="btn btn-nav" onclick="reiniciarCrucigrama()">🔄 Reiniciar</button>
+              <button class="btn btn-primario" onclick="verificarCrucigrama()">✅ Verificar</button>
+              <span id="cruciMsg" class="sopa-msg"></span>
+            </div>
+          </div>
+
+          <!-- ── IR AL TEST ── -->
+          <div class="tarjeta pasatiempo">
+            <h3>🤔 ¿Qué tanto sabes?</h3>
+            <p>Pon a prueba lo aprendido en esta revista con un amigo. Formula preguntas y gana puntos por cada respuesta correcta.</p>
+            <button class="btn btn-secundario" onclick="irASeccion('test-mito-realidad')">Ir al test interactivo 🧠</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('reto-ecologico')">← Reto ecológico</button>
+        <button class="btn btn-nav" onclick="irASeccion('creditos')">Créditos →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 25 · CRÉDITOS Y REFERENCIAS -->
+    <!-- ========================= -->
+    <section id="creditos" class="seccion">
+      <div class="seccion-encabezado">
+        <span class="seccion-numero">25</span>
+        <h2 class="seccion-titulo">Créditos y Referencias</h2>
+      </div>
+      <div class="seccion-cuerpo">
+        <div class="tarjeta">
+          <h3>👥 Equipo editorial</h3>
+          <!-- TEXTO DE EJEMPLO: Reemplaza con los nombres reales de tu equipo -->
+          <ul class="creditos-lista">
+            <li><strong>Editor general:</strong> [Nombre del estudiante]</li>
+            <li><strong>Diseño y diagramación:</strong> [Nombres]</li>
+            <li><strong>Redacción:</strong> [Nombres de los estudiantes responsables]</li>
+            <li><strong>Investigación:</strong> [Nombres]</li>
+            <li><strong>Revisión:</strong> [Docente responsable]</li>
+          </ul>
+        </div>
+
+        <div class="tarjeta">
+          <h3>� Créditos fotográficos</h3>
+          <!-- TEXTO DE EJEMPLO: Reemplaza con los créditos de tus fotos -->
+          <p>Las fotografías fueron tomadas por el equipo editorial, cuidando que no aparezcan rostros de menores de edad. Las imágenes institucionales son de dominio público o se usan con permiso.</p>
+        </div>
+
+        <div class="tarjeta">
+          <h3>📚 Referencias bibliográficas (normas APA)</h3>
+          <ul class="referencias-lista">
+            <!-- REFERENCIAS EN FORMATO APA -->
+            <li>Colombia. (1991). <em>Constitución Política de Colombia</em>. Bogotá: Gaceta Constitucional.</li>
+            <li>Colombia. (2002). <em>Ley 769 de 2002, Código Nacional de Tránsito Terrestre</em>. Diario Oficial.</li>
+            <li>Colombia. (2006). <em>Ley 1098 de 2006, Código de la Infancia y la Adolescencia</em>. Diario Oficial.</li>
+            <li>Colombia. (2008). <em>Ley 1257 de 2008, sobre violencia contra la mujer</em>. Diario Oficial.</li>
+            <li>Colombia. (2011). <em>Ley 1474 de 2011, Estatuto Anticorrupción</em>. Diario Oficial.</li>
+            <li>Colombia. (2013). <em>Ley 1620 de 2013, Sistema Nacional de Convivencia Escolar</em>. Diario Oficial.</li>
+            <li>Colombia. (2015). <em>Ley 1761 de 2015, Ley Rosa Elvira Cely</em>. Diario Oficial.</li>
+            <li>Colombia. (2016). <em>Ley 1774 de 2016, sobre protección a los animales</em>. Diario Oficial.</li>
+            <li>Colombia. (2016). <em>Ley 1801 de 2016, Código Nacional de Policía y Convivencia</em>. Diario Oficial.</li>
+            <li>Corte Constitucional de Colombia. (2006). <em>Sentencia C-355/06</em>.</li>
+            <li>Instituto Colombiano de Bienestar Familiar. (s.f.). <em>www.icbf.gov.co</em>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="seccion-nav">
+        <button class="btn btn-nav" onclick="irASeccion('pasatiempos')">← Pasatiempos</button>
+        <button class="btn btn-nav" onclick="irASeccion('contraportada')">Contraportada →</button>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- 26 · CONTRAPORTADA -->
+    <!-- ========================= -->
+    <section id="contraportada" class="seccion contraportada">
+      <div class="contraportada-fondo"></div>
+      <div class="contraportada-contenido">
+        <div class="contraportada-mensaje">
+          <p class="contraportada-cita">"La educación es el arma más poderosa que puedes usar para cambiar el mundo."</p>
+          <p class="contraportada-autor">— Nelson Mandela</p>
+        </div>
+
+        <div class="contraportada-info">
+          <h2>Gracias por leer</h2>
+          <!-- TEXTO DE EJEMPLO -->
+          <p>Revista escolar digital creada con HTML, CSS y JavaScript como proyecto educativo.</p>
+          <p><strong>Institución Educativa Ramón Munera Lopera</strong></p>
+          <p>Edición N° 1 · Octubre 2026</p>
+        </div>
+
+        <div class="contraportada-botones">
+          <button class="btn btn-primario" onclick="irASeccion('cover')">Volver al inicio 🏠</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTÓN FLOTANTE -->
+  <button class="btn-subir" id="btnSubir" onclick="irASeccion('cover')" aria-label="Volver al inicio">⬆</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
